@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="D:/repository/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar" />
+	<context id="my" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="false" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.45.130.194:3306/db_ez"
+			userId="estation" password="estation@123" />
+
+		<javaModelGenerator targetPackage="com.cimc.estation.common.terminal.vo"
+			targetProject="common">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+<!-- D:\ez_platform\terminal\common\src\main\resources\com\cimc\estation\common\terminal\dao\TerminalDao.xml -->
+		 <sqlMapGenerator targetPackage="com.cimc.estation.common.terminal.dao"
+			targetProject="common">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+ 
+		<javaClientGenerator targetPackage="com.cimc.estation.common.terminal.dao"
+			targetProject="common"
+			type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator> 
+
+
+		<table tableName="t_box" domainObjectName="BoxVo"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+
+	</context>
+</generatorConfiguration>
